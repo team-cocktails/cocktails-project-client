@@ -15,16 +15,14 @@ export default class SignUpPage extends Component {
     handleSubmit = async e => {
         e.preventDefault()
     
-        try {
+        
             const user = await signUpUser(this.state.email, this.state.password);
 
             this.props.handleUserChange(user);
 
             this.props.history.push('/search');
 
-        } catch(e) {
-            this.setState({ error: e.response.body.error })
-        }
+         
     }
     
     render() {

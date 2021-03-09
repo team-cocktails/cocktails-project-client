@@ -1,6 +1,6 @@
 import request from "superagent";
 
-const URL = 'http://localhost:3000';
+const URL = 'http://localhost:3009';
 
 export async function signUpUser (email, password) {
     const response = await request 

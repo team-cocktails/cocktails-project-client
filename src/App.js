@@ -14,16 +14,34 @@ import AboutPage from './components/AboutPage.js';
 import SearchPage from './Searchpage/SearchPage.js';
 import PrivateRoute from './components/PrivateRoute.js';
 import Header from './components/Header.js';
+import { getUserFromLocalStorage, putUserInLocalStorage } from './components/LocalUtils.js';
+
+
 export default class App extends Component {
-  state = {
-    user: ''
-  }
+      state = {
+        user: getUserFromLocalStorage()
+      }
+
+      handleUserChange = (user) => {
+        this.setState({ user });
+
+        putUserInLocalStorage(user);
+      }
+
+    //  handleLogout = () => {
+    //   this.handleUserChange()
+    //  }
+
+
   render() {
-    
+    const { user } = this.state;
       return (
           <div>
               <Router>
-                <Header />
+                <Header 
+                  user={this.state.user}
+                //  handleLogout={this.handleLogout} 
+                />
                   <Switch>
                       <Route 
                           path="/" 
@@ -38,17 +56,17 @@ export default class App extends Component {
                       <Route 
                         path="/signup" 
                         exact
-                        render={(routerProps) => <SignUpPage {...routerProps} />} 
+                        render={(routerProps) => <SignUpPage handleUserChange={this.handleUserChange} {...routerProps} />} 
                       />
                       <Route 
                           path="/login" 
                           exact
-                          render={(routerProps) => <LoginPage {...routerProps} />} 
+                          render={(routerProps) => <LoginPage handleUserChange={this.handleUserChange} {...routerProps} />} 
                       />
                       <PrivateRoute 
                             path="/menu" 
                             exact
-                            token={this.state.user && this.state.user.token}
+                            token={user && user.token}
                             render={(routerProps) => 
                               <MenuPage 
                                 user={this.state.user}
@@ -63,7 +81,7 @@ export default class App extends Component {
                       <Route 
                           path="/search" 
                           exact
-                          render={(routerProps) => <SearchPage {...routerProps} />} 
+                          render={(routerProps) => <SearchPage {...routerProps} user={this.state.user}/>} 
                       />
                   </Switch>
               </Router>

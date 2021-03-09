@@ -42,7 +42,7 @@ export async function getRandomDrinks(token) {
             return response.body;
 }
 
-export function deleteDrink(drinkId, token) {
+export async function deleteDrink(drinkId, token) {
     const response = await request
         .delete(`${URL}/api/menu/${drinkId}`)
         .set('Authorization', token)

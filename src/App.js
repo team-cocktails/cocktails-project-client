@@ -3,9 +3,8 @@ import {
   BrowserRouter as Router, 
   Route, 
   Switch,
-  PrivateRoute,
 } from 'react-router-dom';
-import './App.css';
+// import './App.css';
 import HomePage from './Homepage/HomePage.js';
 import DetailPage from './Searchpage/DetailPage.js';
 import SignUpPage from './Auth/SignUpPage.js';
@@ -13,11 +12,18 @@ import LoginPage from './Auth/LoginPage.js';
 import MenuPage from './Searchpage/MenuPage.js';
 import AboutPage from './components/AboutPage.js';
 import SearchPage from './Searchpage/SearchPage.js';
+import PrivateRoute from './components/PrivateRoute.js';
+import Header from './components/Header.js';
 export default class App extends Component {
+  state = {
+    user: ''
+  }
   render() {
+    
       return (
           <div>
               <Router>
+                <Header />
                   <Switch>
                       <Route 
                           path="/" 

@@ -1,0 +1,31 @@
+body {
+    /* background-image: url('../assets/bar.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #2E2F2F;
+  }
+  img {
+    width: 100px;
+    height: auto;
+  }
+  ul {
+    display: flex;
+    justify-content: space-around;
+  }
+  li {
+    list-style: none;
+  }
+  a {
+    color: #A599B5;
+    text-decoration: none;
+  }
+  .members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  h1 {
+    display: flex;
+    justify-content: center;
+    color: #CDDDDD;
+  }

@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+import {getSearchDrinks, getIngredientDrinks, addToMenu, getRandomDrinks} from '../components/Utils.js';
+
+
 export default class SearchPage extends Component {
     state = {
         search: '',
@@ -13,23 +16,27 @@ export default class SearchPage extends Component {
     handleIngredientChange = (e) => {
         this.setState({filter: e.target.value})
     }
-    handleRandom = (e) => {
-        this.setState({filter: e.target.value})
+    handleRandom = async () => {
+        const drinkRandom = await getRandomDrinks(this.props.user.token)
+        this.setState({drinks: drinkRandom.drinks})
     }
-
+    
     handleDrinkSubmit = async (e) => {
         e.preventDefault();
         const drinkResults = await getSearchDrinks(this.state.search, this.props.user.token)
-        this.setState({search: drinkResults});
+        this.setState({drinks: drinkResults.drinks});
     }
     handleIngredientSubmit = async (e) => {
         e.preventDefault();
         const ingredientResults = await getIngredientDrinks(this.state.filter, this.props.user.token)
-        this.setState({filter: ingredientResults});
+        this.setState({drinks: ingredientResults.drinks});
     }
     handleMenuClick = async (drink) => {
         await addToMenu({
-            
+            picture: drink.strDrinkThumb,
+            drink_name: drink.strDrink,
+            category: drink.strTags,
+            id_drink: drink.idDrink,
         })
     }
     ifMenu = (drink) => {
@@ -37,27 +44,21 @@ export default class SearchPage extends Component {
             item.id === drink.id);
             return Boolean(onMenu);
     }
+    
     render() {
+        
         return (
+            <>
+            
             <div>
+            
                 <form onSubmit={this.handleDrinkSubmit}>
                     <label>
                         <input value={this.state.search} onChange={this.handleDrinkChange} />
                     </label>
                     <button>drink</button>
                 </form>
-                {this.state.drinks.map((drink) =>
-                <div>
-                    <p>{drink.strDrinkThumb}</p>
-                    <p>{drink.strDrink}</p>
-                    <p>{drink.strTags}</p>
-                    <p>{drink.strCategory}</p>
-                    <p>{drink.id}</p>
-                    <p>{this.ifMenu(drink) 
-                    ? 'XXX'
-                    : <button onClick={() => this.handleMenuClick(drink)}>Add to Your Menu</button>}</p>
-                </div>)}
-
+            
                 <form onSubmit={this.handleIngredientSubmit}>
                     <label>
                         <input value={this.state.filter} onChange={this.handleIngredientChange} />
@@ -65,7 +66,21 @@ export default class SearchPage extends Component {
                     <button>ingredient</button>
                 </form>
                 <button onClick={this.handleRandom}>Random!</button>
+
             </div>
+            <div>
+            {this.state.drinks.map((drink) =>
+                <div>
+                    <p><img src={drink.strDrinkThumb} alt='cocktail'></img></p>
+                    <p>{drink.strDrink}</p>
+                    <p>{drink.strTags}</p>
+                    <p>{drink.id}</p>
+                    <p>{this.ifMenu(drink) 
+                    ? 'XXX'
+                    : <button onClick={() => this.handleMenuClick(drink)}>Add to Your Menu</button>}</p>
+                </div>)}
+            </div>
+            </>
         )
     }
 }

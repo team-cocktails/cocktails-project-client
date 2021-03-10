@@ -65,17 +65,41 @@ li {
 }
 a {
   color: #A599B5;
-  
   text-decoration: none;
 }
 
 
 /* About us page */
+.members-container {
+  margin-top: 50px;
+  color: #CDDDDD;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .members {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
 }
 .members img {
-  height: 100px;
+  width: 200px;
+  margin: 20px;
+  border: 5px solid #2E2F2F;
+  border-radius: 5px;
+}
+.members-header {
+  font-size: 3rem;
+  margin-bottom: 50px;
+  font-family: 'Aclonica', sans-serif;
+}
+.members-words {
+  color: #CDDDDD;
+  
+}
+.members-item {
+  line-height: 150%;
+  width: 250px;
+  text-align: center;
+  font-size: 1rem;
 }

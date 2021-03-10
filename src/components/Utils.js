@@ -1,6 +1,8 @@
 import request from "superagent";
 
- const URL = 'http://localhost:3009';
+
+const URL = 'http://localhost:3000';
+
 // const URL = `https://cocktails-project-server.herokuapp.com`;
 
 export async function signUpUser(email, password) {

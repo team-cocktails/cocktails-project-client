@@ -1,12 +1,48 @@
-body {
-  background-image: url('../assets/bar.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #2E2F2F;
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+body, html {
+  height: 100%;
+  width: 100%;
+  background-color: #051014;
 }
-img {
-  width: 100px;
-  height: auto;
+
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.home {
+  height: 100%;
+  border: 5px solid #2E2F2F;
+  border-radius: 50px;
+  
+}
+.home-words {
+  background: rgb(165, 153, 181, 0.7);
+  height: 200px;
+  width: 400px;
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  border: 1px solid #A599B5;
+  color: black;
+  font-size: 2rem;
+  font-family: 'Aclonica', sans-serif;
+}
+
+
+.header-words {
+  color: #CDDDDD;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  font-family: 'Lobster', cursive;
+  margin: 50px;
 }
 ul {
   display: flex;
@@ -19,13 +55,14 @@ a {
   color: #A599B5;
   text-decoration: none;
 }
+
+
+
 .members {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-h1 {
-  display: flex;
-  justify-content: center;
-  color: #CDDDDD;
+.members img {
+  height: 100px;
 }

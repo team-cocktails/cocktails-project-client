@@ -5,7 +5,8 @@ export default class Header extends Component {
     render() {
         return (
             <div>
-                <ul>
+                
+                <ul className='header-links'>
                     <li><NavLink exact activeClassName="active" to="/">Home</NavLink></li>
                     <li><NavLink exact activeClassName="active" to="/search">Search</NavLink></li>
                     <li><NavLink exact activeClassName="active" to="/login">Sign In</NavLink></li>
@@ -14,6 +15,7 @@ export default class Header extends Component {
                     <li><NavLink exact activeClassName="active" to="/about">About us Page</NavLink></li>
                     {/* <li><button onClick={this.props.handleLogout}>Sign Out</button></li> */}
                 </ul>
+                {/* <div className='header-words'>What'll Ya Have?</div> */}
             </div>
         )
     }

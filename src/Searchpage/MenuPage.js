@@ -26,15 +26,15 @@ export default class MenuPage extends Component {
             <div>
                 {
                     this.state.drinks.map(drink =>
-                        <Link to={`./detail/${drink.id_drink}`}>
-                            <div>
-                                <p><img src={drink.picture} alt='cocktail'></img></p>
-                                <p>{drink.drink_name}</p>
-                                <p>{drink.category}</p>
-                                <button onClick={() => this.handleDelete(drink.id)}>Remove</button>
-                            </div>
 
-                        </Link>
+                        <div>
+                            <Link to={`./detail/${drink.id_drink}`}><p><img src={drink.picture} alt='cocktail'></img></p>
+                                <p>{drink.drink_name}</p>
+                                <p>{drink.category}</p></Link>
+                            <button onClick={() => this.handleDelete(drink.id)}>Remove</button>
+                        </div>
+
+
                     )
 
                 }

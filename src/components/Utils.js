@@ -1,8 +1,6 @@
 import request from "superagent";
 
-
 const URL = 'http://localhost:3000';
-
 // const URL = `https://cocktails-project-server.herokuapp.com`;
 
 export async function signUpUser(email, password) {
@@ -78,11 +76,15 @@ export async function addToMenu(drink, token) {
     return response.body;
 }
 
-export async function addTimesDrank(drinkId, times_drank, token) {
+export async function addTimesDrank(drinkId, times_drank, owner_id, token) {
+    const newDrink = {
+        "times_drank": times_drank,
+        "owner_id": owner_id,
+    }
     const response = await request
         .put(`${URL}/api/menu/${drinkId}`)
         .set('Authorization', token)
-        .send(times_drank)
+        .send(newDrink)
 
     return response.body;
 }
@@ -93,4 +95,9 @@ export async function getSQLId(drinkId, token) {
         .set('Authorization', token)
 
     return response.body;
+}
+
+export function getDetailId(detail) {
+    const SQLId = detail.map((drink) => drink.idDrink)
+    return SQLId
 }

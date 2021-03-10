@@ -85,4 +85,12 @@ export async function addTimesDrank(drinkId, times_drank, token) {
         .send(times_drank)
 
     return response.body;
-}   
+}
+
+export async function getSQLId(drinkId, token) {
+    const response = await request
+        .get(`${URL}/api/menu/${drinkId}`)
+        .set('Authorization', token)
+
+    return response.body;
+}

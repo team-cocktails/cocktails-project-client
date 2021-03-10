@@ -29,7 +29,8 @@ export default class SearchPage extends Component {
     handleIngredientSubmit = async (e) => {
         e.preventDefault();
         const ingredientResults = await getIngredientDrinks(this.state.filter, this.props.user.token)
-        this.setState({ drinks: ingredientResults.drinks });
+        this.setState({ drinks: ingredientResults.drinks }); 
+       
     }
     handleMenuClick = async (drink) => {
         await addToMenu({
@@ -45,6 +46,10 @@ export default class SearchPage extends Component {
         return Boolean(onMenu);
     }
 
+    
+
+    
+    
     render() {
 
         return (
@@ -69,8 +74,12 @@ export default class SearchPage extends Component {
 
                 </div>
                 <div>
+                    {this.state.drinks === null || this.state.drinks === 'None Found'
+                    ? <p>Oops! No results found, please check your spelling.</p> 
+                    : 
+                    <>  
                     {this.state.drinks.map((drink) =>
-                        <div>
+                       <div>
                             <p><img src={drink.strDrinkThumb} alt='cocktail'></img></p>
                             <p>{drink.strDrink}</p>
                             <p>{drink.strTags}</p>
@@ -78,7 +87,8 @@ export default class SearchPage extends Component {
                             <p>{this.ifMenu(drink)
                                 ? 'XXX'
                                 : <button onClick={() => this.handleMenuClick(drink)}>Add to Your Menu</button>}</p>
-                        </div>)}
+                        </div>)}</>
+                        }
                 </div>
             </>
         )

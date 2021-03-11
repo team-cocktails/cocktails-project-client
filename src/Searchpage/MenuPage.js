@@ -23,7 +23,13 @@ export default class MenuPage extends Component {
     }
     render() {
         return (
-            <div>
+            <div className='menu-parent'>
+            <div className='menu-container'>
+                <h1 className='menu-header'>What'll ya have?</h1>
+                <div>
+                    <h1>Your drink Menu...</h1>
+
+            <div className='menu-item'>
                 {
                     this.state.drinks.map(drink =>
 
@@ -33,11 +39,11 @@ export default class MenuPage extends Component {
                                 <p>{drink.category}</p></Link>
                             <button onClick={() => this.handleDelete(drink.id)}>Remove</button>
                         </div>
-
-
                     )
-
                 }
+            </div>
+            </div>
+            </div>
             </div>
         )
     }

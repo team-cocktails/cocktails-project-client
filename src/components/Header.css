@@ -1,6 +1,10 @@
 .active {
     color: #ffffff;
 }
+
+.nav-link {
+    font-size: 1.2em;
+}
 .nav-link:hover {
     color: #ffffff; 
 }

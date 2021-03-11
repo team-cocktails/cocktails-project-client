@@ -70,46 +70,47 @@ export default class SearchPage extends Component {
 
         return (
 
-        <div className='search-parent'>
-            <div className='search-container'>
+            <div className='search-parent'>
+                <div className='search-container'>
 
-                <h1 className='search-header'>What'll ya have?</h1>
-                <div>
-                    <h1>You can search by drink...</h1>
-                    <form onSubmit={this.handleDrinkSubmit}>
+                    <h1 className='search-header'>What'll ya have?</h1>
+                    <div>
+                        <h1>You can search by drink...</h1>
+                        <form onSubmit={this.handleDrinkSubmit}>
 
-                        <label>
-                            <input value={this.state.search} onChange={this.handleDrinkChange} />
-                        </label>
-                        <button className='drink-button'>Drink this!</button>
-                    </form>
-                    <h1>OR you can search by ingredient...</h1>
-                    <form onSubmit={this.handleIngredientSubmit}>
-                        <label>
-                            <input value={this.state.filter} onChange={this.handleIngredientChange} />
-                        </label>
-                        <button className='ingredient-button'>Drink this!</button>
-                    </form>
-                    <h1>OR you can roll the dice and pick a random drink...</h1>
-                    <button className='random-button' onClick={this.handleRandom}>Drink this!</button>
-                </div>
-                
-                <div className='search-items-container'>
-                    {this.state.drinks === null || this.state.drinks === 'None Found'
-                    ? <p>Oops! No results found, please check your spelling.</p> 
-                    : 
+                            <label>
+                                <input value={this.state.search} onChange={this.handleDrinkChange} />
+                            </label>
+                            <button className='drink-button'>Drink this!</button>
+                        </form>
+                        <h1>OR you can search by ingredient...</h1>
+                        <form onSubmit={this.handleIngredientSubmit}>
+                            <label>
+                                <input value={this.state.filter} onChange={this.handleIngredientChange} />
+                            </label>
+                            <button className='ingredient-button'>Drink this!</button>
+                        </form>
+                        <h1>OR you can roll the dice and pick a random drink...</h1>
+                        <button className='random-button' onClick={this.handleRandom}>Drink this!</button>
+                    </div>
 
-                    <div className='search-item'>  
-                        {this.state.drinks.map((drink) =>
-                            <div className='search-detail' key={`${drink.idDrink}`}>
-                                <p><img src={drink.strDrinkThumb} alt='cocktail' /></p>
-                                <p>{drink.strDrink}</p>
-                                 <p>{drink.id}</p>
-                                    <div className='search-favorite'>{
-                                    this.ifMenu(drink) 
-                                        ? <p><img alt='menu marker' src={favoriteMarker}/>Added to your menu</p>
-                                        : <button onClick={() => this.handleMenuClick(drink)}>Add to Your Menu</button>}
+                    <div className='search-items-container'>
+                        {this.state.drinks === null || this.state.drinks === 'None Found'
+                            ? <p>Oops! No results found, please check your spelling.</p>
+                            :
 
+                            <div className='search-item'>
+                                {this.state.drinks.map((drink) =>
+                                    <div className='search-detail' key={`${drink.idDrink}`}>
+                                        <p><img src={drink.strDrinkThumb} alt='cocktail' /></p>
+                                        <p>{drink.strDrink}</p>
+                                        <p>{drink.id}</p>
+                                        <div className='search-favorite'>{
+                                            this.ifMenu(drink)
+                                                ? <p><img alt='menu marker' src={favoriteMarker} />Added to your menu</p>
+                                                : <button onClick={() => this.handleMenuClick(drink)}>Add to Your Menu</button>}
+
+                                        </div>
                                     </div>
                                 )}
                             </div>
@@ -120,4 +121,5 @@ export default class SearchPage extends Component {
             </div>
         )
     }
+
 }

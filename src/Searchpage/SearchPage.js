@@ -69,6 +69,7 @@ export default class SearchPage extends Component {
     render() {
             
         return (
+
         <div className='search-parent'>
             <div className='search-container'>
 
@@ -113,10 +114,10 @@ export default class SearchPage extends Component {
                         )}
                         </div>
                     }
-
                 </div>
             </div>
         </div>
         )
     }
+
 }

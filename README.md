@@ -1,70 +1,24 @@
-# Getting Started with Create React App
+# Cocktails Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Group members- Josie Cantu, Taylor Reichner, Vance Mills, Stephen Tamiesie.
 
-## Available Scripts
+- Our project is designed to help people make cocktails! Users will be able to search cocktails by name or ingredient and see a list of the ingredients, measurements, and a description of how to make them. As an added bonus they will be able to get a random cocktail!
 
-In the project directory, you can run:
+- Our project is designed to help none bartenders make drinks correctly and find out what drinks they are able to make with the type of alcohal in their home.
 
-### `npm start`
+- User will need to sign up when they first enter the site, following first sign up users will be able to log into their account with their credentials. After getting signed in users will be able to navigate to the search page, here users will be able to seach by drink, ingredient or select the random button to get a drink. If user wants to save a drink to look at later they can select the add to menu button. To see users full menu you can select the menu page and see whats on their menu. While in the menu page you can select a cocktail picture the see the details about how the drink is made and more!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# endpoints
+- get'/cocktails' - gets all cocktails from API
+- get'/api/search' - gets cocktails based on user query of cocktail name
+- get'/api/ingredients' - gets cocktails based on user query of contail ingredient
+- get'/api/details/:id' - gets a large list of items about one cocktail from api
+- get'/api/menu' - gets a list of menu items from a single owner
+- get'/api/menu/:id_drink' - finds id of menu item
+- post'/api/menu' - puts a item into a users menu 
+- delete'/api/menu/:id' - deletes item from users menu
+- put'/api/menu/:id - changes times drank of a menu item
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Data Schemas
+- CREATE TABLES users - creates table for login and assigns owneer id
+- CREATE TABLE cocktails - grabs specific data from api.

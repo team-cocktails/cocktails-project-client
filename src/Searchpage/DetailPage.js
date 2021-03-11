@@ -36,63 +36,49 @@ export default class DetailPage extends Component {
         console.log( this.state.SQL_drink )
 
         return (
-            <div>
-                <h1>Detail Page</h1>
-                
+        <div className='detail-parent'>
+            
+            <div className='detail-container'>
+                <h1 className='detail-header'>What'll ya have?</h1>
+                    <h1>This is how to make this drink...</h1>
                     {this.state.drink.map((drink) =>
-                        <div>
-                            <p><img src={drink.strDrinkThumb} alt='cocktail' height="100px" width="100px"></img></p>
-                            <h2>{drink.strDrink}</h2>
-
-                            <h3>Glass Type</h3>
-                            <p>{drink.strGlass}</p>
-                            <h3>Instructions</h3>
-                            <p>{drink.strInstructions}</p>
-                            <h3>Ingredients</h3>
-                            <p className="detail-ingredient">{drink.strIngredient1}</p>
-                            <p className="detail-measurement">{drink.strMeasure1}</p>
-                            <p className="detail-ingredient">{drink.strIngredient2}</p>
-                            <p className="detail-measurement">{drink.strMeasure2}</p>
-                            <p className="detail-ingredient">{drink.strIngredient3}</p>
-                            <p className="detail-measurement">{drink.strMeasure3}</p>
-                            <p className="detail-ingredient">{drink.strIngredient4}</p>
-                            <p className="detail-measurement">{drink.strMeasure4}</p>
-                            <p className="detail-ingredient">{drink.strIngredient5}</p>
-                            <p className="detail-measurement">{drink.strMeasure5}</p>
-                            <p className="detail-ingredient">{drink.strIngredient6}</p>
-                            <p className="detail-measurement">{drink.strMeasure6}</p>
-                            <p className="detail-ingredient">{drink.strIngredient7}</p>
-                            <p className="detail-measurement">{drink.strMeasure7}</p>
-                            <p className="detail-ingredient">{drink.strIngredient8}</p>
-                            <p className="detail-measurement">{drink.strMeasure8}</p>
-                            <p className="detail-ingredient">{drink.strIngredient9}</p>
-                            <p className="detail-measurement">{drink.strMeasure9}</p>
-                            <p className="detail-ingredient">{drink.strIngredient10}</p>
-                            <p className="detail-measurement">{drink.strMeasure10}</p>
-                            <p className="detail-ingredient">{drink.strIngredient11}</p>
-                            <p className="detail-measurement">{drink.strMeasure11}</p>
-                            <p className="detail-ingredient">{drink.strIngredient12}</p>
-                            <p className="detail-measurement">{drink.strMeasure12}</p>
-                            <p className="detail-ingredient">{drink.strIngredient13}</p>
-                            <p className="detail-measurement">{drink.strMeasure13}</p>
-                            <p className="detail-ingredient">{drink.strIngredient14}</p>
-                            <p className="detail-measurement">{drink.strMeasure14}</p>
-                            <p className="detail-ingredient">{drink.strIngredient15}</p>
-                            <p className="detail-measurement">{drink.strMeasure15}</p>
-                            <h3>ID Number</h3>
-                            <p>{drink.idDrink}</p>
-                            <p>{drink.strTags}</p>
-
+                        <div className='detail-item'>
+                            <div className='detail-detail'>
+                                <div><img src={drink.strDrinkThumb} alt='cocktail' /></div>
+                                <h2>{drink.strDrink}</h2>
+                                <h4>Glass Type: {drink.strGlass}</h4>
+                                <h4>Instructions:</h4>{drink.strInstructions}
+                                <div><h4>Ingredients:</h4></div>
+                                <div>{drink.strIngredient1}{drink.strMeasure1}</div>
+                                <div>{drink.strIngredient2}{drink.strMeasure2}</div>
+                                <div>{drink.strIngredient3}{drink.strMeasure3}</div>
+                                <div>{drink.strIngredient4}{drink.strMeasure4}</div>
+                                <div>{drink.strIngredient5}{drink.strMeasure5}</div>
+                                <div>{drink.strIngredient6}{drink.strMeasure6}</div>
+                                <div>{drink.strIngredient7}{drink.strMeasure7}</div>
+                                <div>{drink.strIngredient8}{drink.strMeasure8}</div>
+                                <div>{drink.strIngredient9}{drink.strMeasure9}</div>
+                                <div>{drink.strIngredient10}{drink.strMeasure10}</div>
+                                <div>{drink.strIngredient11}{drink.strMeasure11}</div>
+                                <div>{drink.strIngredient12}{drink.strMeasure12}</div>
+                                <div>{drink.strIngredient13}{drink.strMeasure13}</div>
+                                <div>{drink.strIngredient14}{drink.strMeasure14}</div>
+                                <div>{drink.strIngredient15}{drink.strMeasure15}</div>
+                                <div><h5>ID Number: {drink.idDrink} {drink.strTags}</h5></div>
+                            </div>
                         </div>)}
-                        
-                        {this.state.SQL_drink.map((drink) =>
                         <div>
-                            <p>Times you've drank this: {drink.times_drank} </p>
-                            <button onClick={ () => this.handleTimesDrank(drink.times_drank, drink.owner_id, drink.id)}>I drank this!</button>
-                        </div>)}
-                
-                <Link to={`../menu`}><button>Back to Your Menu</button></Link>
+                            {this.state.SQL_drink.map((drink) =>
+                            <div className='detail-times-drank'>
+                                <p>Times you've drank this: {drink.times_drank} </p>
+                                <button className='times-drank-button' onClick={ () => this.handleTimesDrank(drink.times_drank, drink.owner_id, drink.id)}>I drank this!</button>
+                            </div>)}
+                            <div className='detail-times-drank'>
+                            <Link to={`../menu`}><button className='times-drank-button'>Back to Your Menu</button></Link>
+                            </div>
+                        </div>
             </div>
+        </div>
         )
     }
 }

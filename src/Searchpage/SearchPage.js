@@ -99,11 +99,10 @@ export default class SearchPage extends Component {
                     : 
 
                     <div className='search-item'>  
-                        {this.state.drinks.map((drink) =>
+                        {this.state.drinks.slice(0, 20).map((drink) =>
                             <div className='search-detail' key={`${drink.idDrink}`}>
                                 <p><img src={drink.strDrinkThumb} alt='cocktail' /></p>
                                 <p>{drink.strDrink}</p>
-                                <p>{drink.strTags}</p>
                                  <p>{drink.id}</p>
                                     <div className='search-favorite'>{
                                     this.ifMenu(drink) 

@@ -36,7 +36,7 @@ export default class MenuPage extends Component {
                         <div>
                             <Link to={`./detail/${drink.id_drink}`}><p><img src={drink.picture} alt='cocktail'></img></p>
                                 <p>{drink.drink_name}</p>
-                                <p>{drink.category}</p></Link>
+                             </Link>
                             <button onClick={() => this.handleDelete(drink.id)}>Remove</button>
                         </div>
                     )

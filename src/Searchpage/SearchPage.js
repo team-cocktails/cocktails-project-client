@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
 
-import { getSearchDrinks, getIngredientDrinks, addToMenu, getRandomDrinks } from '../components/Utils.js';
+import React, { Component } from 'react'
+import favoriteMarker from '../assets/favorite-marker.png';
+import { getSearchDrinks, getIngredientDrinks, addToMenu, getRandomDrinks, getMenu } from '../components/Utils.js';
 
 
 export default class SearchPage extends Component {
@@ -10,6 +11,17 @@ export default class SearchPage extends Component {
         drinks: [],
         menu: [],
     }
+   
+    componentDidMount = async () => {
+        if (this.props.user.token) await this.fetchMenu();
+    }
+
+    fetchMenu = async () => {
+        const menu = await getMenu(this.props.user.token)
+
+        this.setState({ menu })
+    }
+
     handleDrinkChange = (e) => {
         this.setState({ search: e.target.value })
     }
@@ -39,19 +51,25 @@ export default class SearchPage extends Component {
             category: drink.strTags,
             id_drink: drink.idDrink,
         }, this.props.user.token)
+        await this.fetchMenu();
     }
+
+
     ifMenu = (drink) => {
-        const onMenu = this.state.menu.find(item =>
-            item.id === drink.id);
-        return Boolean(onMenu);
-    }
+      
+        const menu = this.state.menu.find(item =>
+            item.id_drink === Number(drink.idDrink))
+            
+            return Boolean(menu)
+        }
+    
 
     
 
     
     
     render() {
-
+            
         return (
             <>
 
@@ -79,14 +97,15 @@ export default class SearchPage extends Component {
                     : 
                     <>  
                     {this.state.drinks.map((drink) =>
-                       <div>
+                       <div key={`${drink.idDrink}`}>
                             <p><img src={drink.strDrinkThumb} alt='cocktail'></img></p>
                             <p>{drink.strDrink}</p>
                             <p>{drink.strTags}</p>
                             <p>{drink.id}</p>
-                            <p>{this.ifMenu(drink)
-                                ? 'XXX'
-                                : <button onClick={() => this.handleMenuClick(drink)}>Add to Your Menu</button>}</p>
+                            <div>{
+                            this.ifMenu(drink) 
+                                ? <p><img alt='menu marker' src={favoriteMarker}/>Already a menu item</p>
+                                : <button onClick={() => this.handleMenuClick(drink)}>Add to Your Menu</button>}</div>
                         </div>)}</>
                         }
                 </div>

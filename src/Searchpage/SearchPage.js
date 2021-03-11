@@ -11,7 +11,7 @@ export default class SearchPage extends Component {
         drinks: [],
         menu: [],
     }
-
+   
     componentDidMount = async () => {
         if (this.props.user.token) await this.fetchMenu();
     }
@@ -43,7 +43,7 @@ export default class SearchPage extends Component {
     handleIngredientSubmit = async (e) => {
         e.preventDefault();
         const ingredientResults = await getIngredientDrinks(this.state.filter, this.props.user.token)
-        this.setState({ drinks: ingredientResults.drinks });
+        this.setState({ drinks: ingredientResults.drinks }); 
         this.setState({ search: '' })
         this.setState({ filter: '' })
     }
@@ -59,17 +59,16 @@ export default class SearchPage extends Component {
 
 
     ifMenu = (drink) => {
-
+      
         const menu = this.state.menu.find(item =>
             item.id_drink === Number(drink.idDrink))
-
-        return Boolean(menu)
-    }
+            
+            return Boolean(menu)
+        }
 
     render() {
-
+            
         return (
-
         <div className='search-parent'>
             <div className='search-container'>
 
@@ -107,17 +106,17 @@ export default class SearchPage extends Component {
                                  <p>{drink.id}</p>
                                     <div className='search-favorite'>{
                                     this.ifMenu(drink) 
-                                        ? <p><img alt='menu marker' src={favoriteMarker}/>Added to your menu</p>
+                                        ? <p><img alt='menu marker' src={favoriteMarker}/>Already a menu item</p>
                                         : <button onClick={() => this.handleMenuClick(drink)}>Add to Your Menu</button>}
-
                                     </div>
-                                )}
                             </div>
-                        }
+                        )}
+                        </div>
+                    }
 
-                    </div>
                 </div>
             </div>
+        </div>
         )
     }
 }

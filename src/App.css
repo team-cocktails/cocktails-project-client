@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antic&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap'); */
 
 body, html {
   height: 100%;
@@ -15,7 +16,6 @@ body, html {
   border-radius: 50px;
   margin: 0;
   padding: 0;
-  
 }
 .home-header {
   color: #CDDDDD;
@@ -55,6 +55,7 @@ body, html {
   width: 100px;
 }
 
+
 /* header links */
 ul {
   display: flex;
@@ -73,7 +74,6 @@ a {
 .members-container {
   margin-top: 50px;
   color: #CDDDDD;
-  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -95,11 +95,129 @@ a {
 }
 .members-words {
   color: #CDDDDD;
-  
 }
 .members-item {
-  line-height: 150%;
+  line-height: 200%;
   width: 250px;
   text-align: center;
   font-size: 1rem;
+}
+
+
+/* Signup page */
+.signup-parent {
+  display: flex;
+  justify-content: center;
+}
+.signup-container {
+  width: 80%;
+  font-family: 'Antic', sans-serif;
+  margin-top: 50px;
+  color: #CDDDDD;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 5px solid #2E2F2F;
+  border-radius: 5px;
+  padding-bottom: 150px;
+}
+.signup-header {
+  font-size: 3rem;
+  margin-bottom: 50px;
+  font-family: 'Aclonica', sans-serif;
+}
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  width: 200px;
+  border-radius: 2px;
+}
+.signup-button {
+  margin-top: 50px;
+  width: 100px;
+}
+
+
+/* Signin page */
+.signin-parent {
+  display: flex;
+  justify-content: center;
+}
+.signin-container {
+  width: 80%;
+  font-family: 'Antic', sans-serif;
+  margin-top: 50px;
+  color: #CDDDDD;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 5px solid #2E2F2F;
+  border-radius: 5px;
+  padding-bottom: 150px;
+}
+.signin-header {
+  font-size: 3rem;
+  margin-bottom: 50px;
+  font-family: 'Aclonica', sans-serif;
+}
+.signin-form {
+  display: flex;
+  flex-direction: column;
+}
+.signin-button {
+  margin-top: 50px;
+  width: 100px;
+}
+
+
+/* Searchpage */
+.search-parent {
+  display: flex;
+  justify-content: center;
+}
+.search-container {
+  width: 80%;
+  font-family: 'Antic', sans-serif;
+  margin-top: 50px;
+  color: #CDDDDD;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 5px solid #2E2F2F;
+  border-radius: 5px;
+  padding-bottom: 150px;
+}
+.search-header {
+  font-size: 3rem;
+  margin-bottom: 50px;
+  font-family: 'Aclonica', sans-serif;
+}
+.drink-button {
+  width: 100px;
+}
+.ingredient-button {
+  width: 100px;
+}
+.random-button {
+  width: 100px;
+}
+.search-items-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+  margin-top: 150px;
+  
+}
+.search-item {
+  display: flex;
+  flex-direction: column;
+  
+  border: 1px solid white;
+  
+}
+.search-item img {
+  width: 100px;
 }

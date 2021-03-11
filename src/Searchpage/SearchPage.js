@@ -53,33 +53,33 @@ export default class SearchPage extends Component {
     render() {
 
         return (
-            <>
-
-                <div>
-
+            <div className='search-parent'>
+            <div className='search-container'>
+            <h1 className='search-header'>What'll ya have? </h1>
+                <div><h1>You can search by drink...</h1>
                     <form onSubmit={this.handleDrinkSubmit}>
                         <label>
                             <input value={this.state.search} onChange={this.handleDrinkChange} />
                         </label>
-                        <button>drink</button>
+                        <button className='drink-button'>Drink this!</button>
                     </form>
-
+                    <h1>OR you can search by ingredient...</h1>
                     <form onSubmit={this.handleIngredientSubmit}>
                         <label>
                             <input value={this.state.filter} onChange={this.handleIngredientChange} />
                         </label>
-                        <button>ingredient</button>
+                        <button className='ingredient-button'>Drink this!</button>
                     </form>
-                    <button onClick={this.handleRandom}>Random!</button>
-
+                    <h1>OR you can roll the dice and pick a random drink...</h1>
+                    <button className='random-button' onClick={this.handleRandom}>Drink this!</button>
                 </div>
-                <div>
+                <div className='search-items-container'>
                     {this.state.drinks === null || this.state.drinks === 'None Found'
                     ? <p>Oops! No results found, please check your spelling.</p> 
                     : 
                     <>  
                     {this.state.drinks.map((drink) =>
-                       <div>
+                       <div className='search-item'>
                             <p><img src={drink.strDrinkThumb} alt='cocktail'></img></p>
                             <p>{drink.strDrink}</p>
                             <p>{drink.strTags}</p>
@@ -90,7 +90,8 @@ export default class SearchPage extends Component {
                         </div>)}</>
                         }
                 </div>
-            </>
+            </div>
+            </div>
         )
     }
 }

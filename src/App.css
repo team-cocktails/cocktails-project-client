@@ -109,7 +109,6 @@ a {
   display: flex;
   justify-content: center;
 }
-
 .signup-container {
   width: 80%;
   font-family: 'Antic', sans-serif;
@@ -261,13 +260,22 @@ input {
   font-family: 'Aclonica', sans-serif;
 }
 .menu-item {
-  border: 1px solid white;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   word-wrap: break-word;
-  border: 1px solid white;
-
+}
+.menu-detail {
+  border: 5px solid #2E2F2F;
+  border-radius: 5px;;
+  word-wrap: break-word;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 175px;
+  height: auto;
 }
 .menu-item img {
   width: 100px;

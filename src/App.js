@@ -38,15 +38,12 @@ export default class App extends Component {
     return (
       <div>
         <Router>
-
-
-
-
           <Route
             path="/(.+)"
-            component={Header}
-          />
+            render={() => <Header user={this.state.user}
+              handleLogout={this.handleLogout} />}
 
+          />
 
           <Switch>
             <Route

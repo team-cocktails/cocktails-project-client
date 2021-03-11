@@ -114,6 +114,21 @@ export default class SearchPage extends Component {
                         </div>
                     }
 
+<<<<<<< HEAD
+                       <div className='search-item' key={`${drink.idDrink}`}>
+
+                            <p><img src={drink.strDrinkThumb} alt='cocktail'></img></p>
+                            <p>{drink.strDrink}</p>
+                            <p>{drink.strTags}</p>
+                            <p>{drink.id}</p>
+                            <div>{
+                            this.ifMenu(drink) 
+                                ? <p><img alt='menu marker' src={favoriteMarker}/>Already a menu item</p>
+                                : <button onClick={() => this.handleMenuClick(drink)}>Add to Your Menu</button>}</div>
+                        </div>)}</>
+                        }
+=======
+>>>>>>> 8c911d2d52a869949cef301991a32f86a8370397
                 </div>
             </div>
         </div>

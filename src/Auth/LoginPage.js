@@ -29,19 +29,22 @@ export default class LoginPage extends Component {
     
     render() {
         return (
-            <div>
-                <h2>LOGIN</h2>
-                <form onSubmit={this.handleSubmit}>
+            <div className='signin-parent'>
+            <div className='signin-container'>
+            <h1 className='signin-header'>What'll ya have?</h1>
+            <h1>Sign in to get your drink menu for the night...</h1>
+                <form className='signin-form' onSubmit={this.handleSubmit}>
                     <label>
-                        Email
+                        <p>Email</p>
                             <input type="email" value={this.state.email} onChange={this.handleEmailChange} />
                     </label>
                     <label>
-                        Password
+                        <p>Password</p>
                             <input value={this.state.password} onChange={this.handlePasswordChange} />
                     </label>
-                    <button>Submit</button>
+                    <button className='signin-button'>Submit</button>
                 </form>
+            </div>
             </div>
         )
     }

@@ -37,12 +37,15 @@ export default class SearchPage extends Component {
         e.preventDefault();
         const drinkResults = await getSearchDrinks(this.state.search, this.props.user.token)
         this.setState({ drinks: drinkResults.drinks });
+        this.setState({ search: '' })
+        this.setState({ filter: '' })
     }
     handleIngredientSubmit = async (e) => {
         e.preventDefault();
         const ingredientResults = await getIngredientDrinks(this.state.filter, this.props.user.token)
         this.setState({ drinks: ingredientResults.drinks }); 
-       
+        this.setState({ search: '' })
+        this.setState({ filter: '' })
     }
     handleMenuClick = async (drink) => {
         await addToMenu({
@@ -62,20 +65,18 @@ export default class SearchPage extends Component {
             
             return Boolean(menu)
         }
-    
 
-    
-
-    
-    
     render() {
             
         return (
-            <div className='search-parent'>
+        <div className='search-parent'>
             <div className='search-container'>
-            <h1 className='search-header'>What'll ya have? </h1>
-                <div><h1>You can search by drink...</h1>
+
+                <h1 className='search-header'>What'll ya have?</h1>
+                <div>
+                    <h1>You can search by drink...</h1>
                     <form onSubmit={this.handleDrinkSubmit}>
+
                         <label>
                             <input value={this.state.search} onChange={this.handleDrinkChange} />
                         </label>
@@ -91,15 +92,29 @@ export default class SearchPage extends Component {
                     <h1>OR you can roll the dice and pick a random drink...</h1>
                     <button className='random-button' onClick={this.handleRandom}>Drink this!</button>
                 </div>
+                
                 <div className='search-items-container'>
                     {this.state.drinks === null || this.state.drinks === 'None Found'
                     ? <p>Oops! No results found, please check your spelling.</p> 
                     : 
-                    <>  
-                    {this.state.drinks.map((drink) =>
 
-                 
+                    <div className='search-item'>  
+                        {this.state.drinks.slice(0, 20).map((drink) =>
+                            <div className='search-detail' key={`${drink.idDrink}`}>
+                                <p><img src={drink.strDrinkThumb} alt='cocktail' /></p>
+                                <p>{drink.strDrink}</p>
+                                 <p>{drink.id}</p>
+                                    <div className='search-favorite'>{
+                                    this.ifMenu(drink) 
+                                        ? <p><img alt='menu marker' src={favoriteMarker}/>Already a menu item</p>
+                                        : <button onClick={() => this.handleMenuClick(drink)}>Add to Your Menu</button>}
+                                    </div>
+                            </div>
+                        )}
+                        </div>
+                    }
 
+<<<<<<< HEAD
                        <div className='search-item' key={`${drink.idDrink}`}>
 
                             <p><img src={drink.strDrinkThumb} alt='cocktail'></img></p>
@@ -112,9 +127,11 @@ export default class SearchPage extends Component {
                                 : <button onClick={() => this.handleMenuClick(drink)}>Add to Your Menu</button>}</div>
                         </div>)}</>
                         }
+=======
+>>>>>>> 8c911d2d52a869949cef301991a32f86a8370397
                 </div>
             </div>
-            </div>
+        </div>
         )
     }
 }

@@ -100,7 +100,7 @@ export default class SearchPage extends Component {
 
                  
 
-                       <div className='search-item key={`${drink.idDrink}`}>
+                       <div className='search-item' key={`${drink.idDrink}`}>
 
                             <p><img src={drink.strDrinkThumb} alt='cocktail'></img></p>
                             <p>{drink.strDrink}</p>

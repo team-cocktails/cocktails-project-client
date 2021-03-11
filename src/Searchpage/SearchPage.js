@@ -69,6 +69,7 @@ export default class SearchPage extends Component {
     render() {
             
         return (
+
         <div className='search-parent'>
             <div className='search-container'>
 
@@ -108,15 +109,16 @@ export default class SearchPage extends Component {
                                     this.ifMenu(drink) 
                                         ? <p><img alt='menu marker' src={favoriteMarker}/>Already a menu item</p>
                                         : <button onClick={() => this.handleMenuClick(drink)}>Add to Your Menu</button>}
+
                                     </div>
                             </div>
                         )}
                         </div>
                     }
-
                 </div>
             </div>
         </div>
         )
     }
+
 }

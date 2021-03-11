@@ -48,7 +48,9 @@ body, html {
   font-family: 'Aclonica', sans-serif;
   text-align: center;
 }
-.yes-button {
+
+
+.home-button {
   width: 100px;
   background-color: #A599B5;
   cursor: pointer;
@@ -57,7 +59,28 @@ body, html {
   width: 100px;
   background-color: #A599B5;
   cursor: pointer;
+	box-shadow:inset 0px 0px 14px -3px #f2fadc;
+	background:linear-gradient(to bottom, #ffe8cb 5%, #a9a9a9 100%);
+	background-color:#f0dbbc;
+	border-radius:6px;
+	border:1px solid rgb(165, 153, 181, 0.7);
+	display:inline-block;
+	cursor:pointer;
+	color:black;
+	font-family: 'Antic', sans-serif;
+	font-size:18px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ced9bf;
+  margin: 10px;
 }
+
+.home-button:hover {
+	background:linear-gradient(to bottom, #f9f1e7 5%, #b6b6b6 100%);
+	background-color:#e4c9b5;
+}
+
 
 
 /* header links */

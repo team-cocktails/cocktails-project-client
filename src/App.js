@@ -28,9 +28,9 @@ export default class App extends Component {
     putUserInLocalStorage(user);
   }
 
-  //  handleLogout = () => {
-  //   this.handleUserChange()
-  //  }
+  handleLogout = () => {
+    this.handleUserChange()
+  }
 
 
   render() {
@@ -38,14 +38,14 @@ export default class App extends Component {
     return (
       <div>
         <Router>
-        <Route
-              path="/"
-              exact
-              render={(routerProps) => <HomePage {...routerProps} />}
-            />
-        <Header
+          <Route
+            path="/"
+            exact
+            render={(routerProps) => <HomePage {...routerProps} />}
+          />
+          <Header
             user={this.state.user}
-          //  handleLogout={this.handleLogout} 
+            handleLogout={this.handleLogout}
           />
           <Switch>
             <Route

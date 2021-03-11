@@ -23,8 +23,8 @@ export default class Header extends Component {
                     {
                         this.props.user && this.props.user.token &&
                         <>
-                            <li><NavLink exact activeClassName="active" to="/menu">Your Menu</NavLink></li>
-                            <li><NavLink onClick={this.props.handleLogout} exact activeClassName="active" to="/">Sign Out</NavLink></li>
+                            <li><NavLink exact activeClassName="active" className="nav-link" to="/menu">Your Menu</NavLink></li>
+                            <li><NavLink onClick={this.props.handleLogout} exact activeClassName="active" className="nav-link" to="/">Sign Out</NavLink></li>
                         </>
                     }
 

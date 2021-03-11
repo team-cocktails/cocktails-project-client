@@ -38,16 +38,22 @@ export default class App extends Component {
     return (
       <div>
         <Router>
+
+
+
+
           <Route
-            path="/"
-            exact
-            render={(routerProps) => <HomePage {...routerProps} />}
+            path="/(.+)"
+            component={Header}
           />
-          <Header
-            user={this.state.user}
-            handleLogout={this.handleLogout}
-          />
+
+
           <Switch>
+            <Route
+              path="/"
+              exact
+              render={(routerProps) => <HomePage {...routerProps} />}
+            />
             <Route
               path="/detail/:id"
               exact

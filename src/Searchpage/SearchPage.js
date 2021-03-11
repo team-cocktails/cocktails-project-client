@@ -37,12 +37,15 @@ export default class SearchPage extends Component {
         e.preventDefault();
         const drinkResults = await getSearchDrinks(this.state.search, this.props.user.token)
         this.setState({ drinks: drinkResults.drinks });
+        this.setState({ search: '' })
+        this.setState({ filter: '' })
     }
     handleIngredientSubmit = async (e) => {
         e.preventDefault();
         const ingredientResults = await getIngredientDrinks(this.state.filter, this.props.user.token)
         this.setState({ drinks: ingredientResults.drinks }); 
-       
+        this.setState({ search: '' })
+        this.setState({ filter: '' })
     }
     handleMenuClick = async (drink) => {
         await addToMenu({
@@ -68,10 +71,12 @@ export default class SearchPage extends Component {
         return (
         <div className='search-parent'>
             <div className='search-container'>
+
                 <h1 className='search-header'>What'll ya have?</h1>
                 <div>
                     <h1>You can search by drink...</h1>
                     <form onSubmit={this.handleDrinkSubmit}>
+
                         <label>
                             <input value={this.state.search} onChange={this.handleDrinkChange} />
                         </label>
@@ -92,6 +97,7 @@ export default class SearchPage extends Component {
                     {this.state.drinks === null || this.state.drinks === 'None Found'
                     ? <p>Oops! No results found, please check your spelling.</p> 
                     : 
+
                     <div className='search-item'>  
                         {this.state.drinks.map((drink) =>
                             <div className='search-detail' key={`${drink.idDrink}`}>
@@ -108,6 +114,7 @@ export default class SearchPage extends Component {
                         )}
                         </div>
                     }
+
                 </div>
             </div>
         </div>

@@ -37,12 +37,15 @@ export default class SearchPage extends Component {
         e.preventDefault();
         const drinkResults = await getSearchDrinks(this.state.search, this.props.user.token)
         this.setState({ drinks: drinkResults.drinks });
+        this.setState({ search: '' })
+        this.setState({ filter: '' })
     }
     handleIngredientSubmit = async (e) => {
         e.preventDefault();
         const ingredientResults = await getIngredientDrinks(this.state.filter, this.props.user.token)
         this.setState({ drinks: ingredientResults.drinks }); 
-       
+        this.setState({ search: '' })
+        this.setState({ filter: '' })
     }
     handleMenuClick = async (drink) => {
         await addToMenu({
@@ -75,7 +78,7 @@ export default class SearchPage extends Component {
             <div className='search-container'>
             <h1 className='search-header'>What'll ya have? </h1>
                 <div><h1>You can search by drink...</h1>
-                    <form onSubmit={this.handleDrinkSubmit}>
+                    <form onSubmit={this.handleDrinkSubmit} >
                         <label>
                             <input value={this.state.search} onChange={this.handleDrinkChange} />
                         </label>
@@ -96,15 +99,14 @@ export default class SearchPage extends Component {
                     ? <p>Oops! No results found, please check your spelling.</p> 
                     : 
                     <>  
-                    {this.state.drinks.map((drink) =>
+                    {this.state.drinks.slice(0, 20).map((drink) =>
 
                  
 
-                       <div className='search-item key={`${drink.idDrink}`}>
+                       <div className='search-item' key={`${drink.idDrink}`}>
 
-                            <p><img src={drink.strDrinkThumb} alt='cocktail'></img></p>
+                            <p><img src={drink.strDrinkThumb} alt='cocktail'/></p>
                             <p>{drink.strDrink}</p>
-                            <p>{drink.strTags}</p>
                             <p>{drink.id}</p>
                             <div>{
                             this.ifMenu(drink) 

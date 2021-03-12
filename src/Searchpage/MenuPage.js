@@ -14,13 +14,10 @@ export default class MenuPage extends Component {
 
     handleDelete = async (id) => {
         await deleteDrink(id, this.props.user.token)
-
         const drinks = await getMenu(this.props.user.token);
-
         this.setState({ drinks: drinks });
-
-
     }
+
     render() {
         return (
             <div className='menu-parent'>
@@ -28,7 +25,6 @@ export default class MenuPage extends Component {
                     <h1 className='menu-header'>What'll ya have?</h1>
                     <div>
                         <h1>Your Drink Menu...</h1>
-
                         <div className='menu-item'>
                             {
                                 this.state.drinks.map(drink =>
@@ -38,13 +34,10 @@ export default class MenuPage extends Component {
                                             <p>{drink.drink_name}</p>
 
                                         </Link>
-
-
                                         <button className="remove-button" onClick={() => this.handleDelete(drink.id)}>Remove</button>
                                     </div>
                                 )
                             }
-
                         </div>
                     </div>
                 </div>

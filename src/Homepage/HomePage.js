@@ -11,7 +11,6 @@ export default class HomePage extends Component {
                     <img className='home-img' src={bar} alt={'pictures'} />
                     <div className='home-words'>First things first, are you over 21?
                     <HomeButtons /></div>
-                    
                 </div>
             </>
         )

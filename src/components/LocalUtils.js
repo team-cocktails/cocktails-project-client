@@ -5,7 +5,6 @@ export function getUserFromLocalStorage() {
     const user = localStorage.getItem(USER);
     try {
     
-    
         return JSON.parse(user);
 
     } catch(e) {

@@ -52,12 +52,10 @@ body, html {
 
 .home-button {
   width: 100px;
-  background-color: #A599B5;
   cursor: pointer;
 }
-.no-button {
+.home-button {
   width: 100px;
-  background-color: #A599B5;
   cursor: pointer;
 	box-shadow:inset 0px 0px 14px -3px #f2fadc;
 	background:linear-gradient(to bottom, #ffe8cb 5%, #a9a9a9 100%);
@@ -165,6 +163,10 @@ input {
   margin-top: 50px;
   width: 100px;
 }
+.signup-button:hover {
+  background-color: #A599B5;
+  cursor: pointer;
+}
 
 
 /* Signin page */
@@ -194,8 +196,14 @@ input {
   flex-direction: column;
 }
 .signin-button {
+  background-color: #A599B5;
+  cursor: pointer;
   margin-top: 50px;
   width: 100px;
+}
+.signin-button:hover {
+  background-color: #A599B5;
+  cursor: pointer;
 }
 
 
@@ -224,11 +232,23 @@ input {
 .drink-button {
   width: 100px;
 }
+.drink-button:hover {
+  background-color: #A599B5;
+  cursor: pointer;
+}
 .ingredient-button {
   width: 100px;
 }
+.ingredient-button:hover {
+  background-color: #A599B5;
+  cursor: pointer;
+}
 .random-button {
   width: 100px;
+}
+.random-button:hover {
+  background-color: #A599B5;
+  cursor: pointer;
 }
 .search-items-container {
   display: flex;
@@ -262,6 +282,10 @@ input {
   flex-direction: column;
   width: 175px;
   height: auto;
+}
+.search-button:hover {
+  background-color: #A599B5;
+  cursor: pointer;
 }
 
 /* menu page */
@@ -307,13 +331,16 @@ input {
 .menu-item img {
   width: 100px;
 }
+.menu-button:hover {
+  background-color: #A599B5;
+  cursor: pointer;
+}
 
 
 /* detail page */
 .detail-parent {
   display: flex;
   justify-content: center;
-  /* border: 1px solid white; */
 }
 .detail-container {
   width: 80%;
@@ -326,7 +353,6 @@ input {
   border: 5px solid #2E2F2F;
   border-radius: 5px;
   padding-bottom: 150px;
-  /* border: 1px solid red; */
 }
 .detail-header {
   font-size: 3rem;
@@ -337,7 +363,6 @@ input {
   display: flex;
   flex-direction: column;
   word-wrap: break-word;
-  /* border: 1px solid violet; */
   width: 640px;
 }
 .detail-item img {

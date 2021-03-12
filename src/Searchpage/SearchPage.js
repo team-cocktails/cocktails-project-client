@@ -108,8 +108,7 @@ export default class SearchPage extends Component {
                                     <div className='search-favorite'>{
                                     this.ifMenu(drink) 
                                         ? <p><img alt='menu marker' src={favoriteMarker}/>Already a menu item</p>
-                                        : <button onClick={() => this.handleMenuClick(drink)}>Add to Your Menu</button>}
-
+                                        : <button className='search-button' onClick={() => this.handleMenuClick(drink)}>Add to Your Menu</button>}
                                     </div>
                             </div>
                         )}

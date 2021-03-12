@@ -11,10 +11,7 @@ export default class DetailPage extends Component {
 
     componentDidMount = async () => {
         const drinkData = await getDrinkId(this.props.match.params.id, this.props.user.token);
-
-
         this.setState({ drink: drinkData.drinks })
-
         const detail = this.state.drink;
         const APIDrinkId = getDetailId(detail);
         const SQLDrinkData = await getSQLId(APIDrinkId, this.props.user.token)
@@ -24,7 +21,6 @@ export default class DetailPage extends Component {
     handleTimesDrank = async (times_drank, owner_id, drinkId) => {
         const incrementedTimes_Drank = times_drank++
         addTimesDrank(drinkId, incrementedTimes_Drank, owner_id, this.props.user.token)
-
         const detail = this.state.drink;
         const APIDrinkId = getDetailId(detail);
         const SQLDrinkData = await getSQLId(APIDrinkId, this.props.user.token)
@@ -37,7 +33,6 @@ export default class DetailPage extends Component {
 
         return (
             <div className='detail-parent'>
-
                 <div className='detail-container'>
                     <h1 className='detail-header'>What'll ya have?</h1>
                     <h1>How to make this drink...</h1>

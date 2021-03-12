@@ -21,7 +21,6 @@ export default class SearchPage extends Component {
 
         this.setState({ menu })
     }
-
     handleDrinkChange = (e) => {
         this.setState({ search: e.target.value })
     }
@@ -56,8 +55,6 @@ export default class SearchPage extends Component {
         }, this.props.user.token)
         await this.fetchMenu();
     }
-
-
     ifMenu = (drink) => {
 
         const menu = this.state.menu.find(item =>
@@ -67,17 +64,13 @@ export default class SearchPage extends Component {
     }
 
     render() {
-
         return (
-
             <div className='search-parent'>
                 <div className='search-container'>
-
                     <h1 className='search-header'>What'll ya have?</h1>
                     <div>
                         <h1>You can search by drink...</h1>
                         <form onSubmit={this.handleDrinkSubmit}>
-
                             <label>
                                 <input value={this.state.search} onChange={this.handleDrinkChange} />
                             </label>
@@ -93,12 +86,10 @@ export default class SearchPage extends Component {
                         <h1>OR you can roll the dice and pick a random drink...</h1>
                         <button className='random-button' onClick={this.handleRandom}>Drink this!</button>
                     </div>
-
                     <div className='search-items-container'>
                         {this.state.drinks === null || this.state.drinks === 'None Found'
                             ? <p>Oops! No results found, please check your spelling.</p>
                             :
-
                             <div className='search-item'>
                                 {this.state.drinks.slice(0, 20).map((drink) =>
                                     <div className='search-detail' key={`${drink.idDrink}`}>
@@ -109,9 +100,7 @@ export default class SearchPage extends Component {
                                             this.ifMenu(drink)
                                                 ? <p><img alt='menu marker' src={favoriteMarker} />On Your Menu</p>
                                                 : <button className="add-button" onClick={() => this.handleMenuClick(drink)}>Add to Menu</button>}
-
                                         </div>
-
                                     </div>
                                 )}
                             </div>

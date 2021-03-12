@@ -33,14 +33,14 @@ export default class DetailPage extends Component {
 
     render() {
 
-        console.log( this.state.SQL_drink )
+        console.log(this.state.SQL_drink)
 
         return (
-        <div className='detail-parent'>
-            
-            <div className='detail-container'>
-                <h1 className='detail-header'>What'll ya have?</h1>
-                    <h1>This is how to make this drink...</h1>
+            <div className='detail-parent'>
+
+                <div className='detail-container'>
+                    <h1 className='detail-header'>What'll ya have?</h1>
+                    <h1>How to make this drink...</h1>
                     {this.state.drink.map((drink) =>
                         <div className='detail-item'>
                             <div className='detail-detail'>
@@ -67,18 +67,18 @@ export default class DetailPage extends Component {
                                 <div><h5>ID Number: {drink.idDrink} {drink.strTags}</h5></div>
                             </div>
                         </div>)}
-                        <div>
-                            {this.state.SQL_drink.map((drink) =>
+                    <div>
+                        {this.state.SQL_drink.map((drink) =>
                             <div className='detail-times-drank'>
                                 <p>Times you've drank this: {drink.times_drank} </p>
-                                <button className='times-drank-button' onClick={ () => this.handleTimesDrank(drink.times_drank, drink.owner_id, drink.id)}>I drank this!</button>
+                                <button className='times-drank-button' onClick={() => this.handleTimesDrank(drink.times_drank, drink.owner_id, drink.id)}>I drank this!</button>
                             </div>)}
-                            <div className='detail-times-drank'>
+                        <div className='detail-times-drank'>
                             <Link to={`../menu`}><button className='times-drank-button'>Back to Your Menu</button></Link>
-                            </div>
                         </div>
+                    </div>
+                </div>
             </div>
-        </div>
         )
     }
 }

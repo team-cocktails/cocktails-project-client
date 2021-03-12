@@ -24,28 +24,28 @@ export default class MenuPage extends Component {
     render() {
         return (
             <div className='menu-parent'>
-            <div className='menu-container'>
-                <h1 className='menu-header'>What'll ya have?</h1>
-                <div>
-                    <h1>Your drink Menu...</h1>
+                <div className='menu-container'>
+                    <h1 className='menu-header'>What'll ya have?</h1>
+                    <div>
+                        <h1>Your Drink Menu...</h1>
 
-            <div className='menu-item'>
-                {
-                    this.state.drinks.map(drink =>
+                        <div className='menu-item'>
+                            {
+                                this.state.drinks.map(drink =>
 
-                        <div className='menu-detail'>
-                            <Link to={`./detail/${drink.id_drink}`}><p><img src={drink.picture} alt='cocktail'></img></p>
-                                <p>{drink.drink_name}</p>
+                                    <div className='menu-detail'>
+                                        <Link to={`./detail/${drink.id_drink}`}><p><img src={drink.picture} alt='cocktail'></img></p>
+                                            <p>{drink.drink_name}</p>
 
-                                </Link>
+                                        </Link>
 
-                            <button onClick={() => this.handleDelete(drink.id)}>Remove</button>
+                                        <button className="remove-button" onClick={() => this.handleDelete(drink.id)}>Remove</button>
+                                    </div>
+                                )
+                            }
                         </div>
-                    )
-                }
-            </div>
-            </div>
-            </div>
+                    </div>
+                </div>
             </div>
         )
     }

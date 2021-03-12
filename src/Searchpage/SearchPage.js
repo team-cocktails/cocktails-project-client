@@ -111,6 +111,7 @@ export default class SearchPage extends Component {
                                                 : <button className="add-button" onClick={() => this.handleMenuClick(drink)}>Add to Menu</button>}
 
                                         </div>
+
                                     </div>
                                 )}
                             </div>

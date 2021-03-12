@@ -49,22 +49,22 @@ export default class DetailPage extends Component {
                                 <h4>Glass Type: {drink.strGlass}</h4>
                                 <h4>Instructions:</h4>{drink.strInstructions}
                                 <div><h4>Ingredients:</h4></div>
-                                <div>{drink.strIngredient1}{drink.strMeasure1}</div>
-                                <div>{drink.strIngredient2}{drink.strMeasure2}</div>
-                                <div>{drink.strIngredient3}{drink.strMeasure3}</div>
-                                <div>{drink.strIngredient4}{drink.strMeasure4}</div>
-                                <div>{drink.strIngredient5}{drink.strMeasure5}</div>
-                                <div>{drink.strIngredient6}{drink.strMeasure6}</div>
-                                <div>{drink.strIngredient7}{drink.strMeasure7}</div>
-                                <div>{drink.strIngredient8}{drink.strMeasure8}</div>
-                                <div>{drink.strIngredient9}{drink.strMeasure9}</div>
-                                <div>{drink.strIngredient10}{drink.strMeasure10}</div>
-                                <div>{drink.strIngredient11}{drink.strMeasure11}</div>
-                                <div>{drink.strIngredient12}{drink.strMeasure12}</div>
-                                <div>{drink.strIngredient13}{drink.strMeasure13}</div>
-                                <div>{drink.strIngredient14}{drink.strMeasure14}</div>
-                                <div>{drink.strIngredient15}{drink.strMeasure15}</div>
-                                <div><h5>ID Number: {drink.idDrink} {drink.strTags}</h5></div>
+                                <div>{drink.strIngredient1} {drink.strMeasure1}</div>
+                                <div>{drink.strIngredient2} {drink.strMeasure2}</div>
+                                <div>{drink.strIngredient3} {drink.strMeasure3}</div>
+                                <div>{drink.strIngredient4} {drink.strMeasure4}</div>
+                                <div>{drink.strIngredient5} {drink.strMeasure5}</div>
+                                <div>{drink.strIngredient6} {drink.strMeasure6}</div>
+                                <div>{drink.strIngredient7} {drink.strMeasure7}</div>
+                                <div>{drink.strIngredient8} {drink.strMeasure8}</div>
+                                <div>{drink.strIngredient9} {drink.strMeasure9}</div>
+                                <div>{drink.strIngredient10} {drink.strMeasure10}</div>
+                                <div>{drink.strIngredient11} {drink.strMeasure11}</div>
+                                <div>{drink.strIngredient12} {drink.strMeasure12}</div>
+                                <div>{drink.strIngredient13} {drink.strMeasure13}</div>
+                                <div>{drink.strIngredient14} {drink.strMeasure14}</div>
+                                <div>{drink.strIngredient15} {drink.strMeasure15}</div>
+                                
                             </div>
                         </div>)}
                     <div>

@@ -52,12 +52,10 @@ body, html {
 
 /* .home-button {
   width: 100px;
-  background-color: #A599B5;
   cursor: pointer;
-} */
+
 .home-button {
   width: 100px;
-  background-color: #A599B5;
   cursor: pointer;
 	box-shadow:inset 0px 0px 14px -3px #f2fadc;
 	background:linear-gradient(to bottom, #fee9cf 5%, #9b826c 100%);
@@ -184,6 +182,10 @@ input {
 	background:linear-gradient(to bottom, #f9f1e7 25%, #50396c 100%);
 	background-color:#e4c9b5;
 }
+.signup-button:hover {
+  background-color: #A599B5;
+  cursor: pointer;
+}
 
 
 /* Login page */
@@ -237,6 +239,10 @@ input {
 	background:linear-gradient(to bottom, #f9f1e7 25%, #50396c 100%);
 	background-color:#e4c9b5;
 }
+.signin-button:hover {
+  background-color: #A599B5;
+  cursor: pointer;
+}
 
 
 /* Searchpage */
@@ -281,11 +287,6 @@ input {
   margin: 10px;
 }
 
-.search-button:hover {
-	background:linear-gradient(to bottom, #f9f1e7 25%, #50396c 100%);
-	background-color:#e4c9b5;
-}
-
 .random-button {
   width: 120px;
   height: 30px;
@@ -304,11 +305,6 @@ input {
 	text-decoration:none;
   margin: 10px;
   margin-left: 270px;
-}
-
-.random-button:hover {
-	background:linear-gradient(to bottom, #f9f1e7 25%, #50396c 100%);
-	background-color:#e4c9b5;
 }
 
 .search-items-container {
@@ -343,6 +339,10 @@ input {
   flex-direction: column;
   width: 175px;
   height: auto;
+}
+.search-button:hover {
+  background-color: #A599B5;
+  cursor: pointer;
 }
 
 /* menu page */
@@ -387,6 +387,10 @@ input {
 }
 .menu-item img {
   width: 100px;
+}
+.menu-button:hover {
+  background-color: #A599B5;
+  cursor: pointer;
 }
 
 .remove-button {
@@ -441,7 +445,6 @@ input {
 .detail-parent {
   display: flex;
   justify-content: center;
-  /* border: 1px solid white; */
 }
 .detail-container {
   width: 80%;
@@ -454,7 +457,6 @@ input {
   border: 5px solid #2E2F2F;
   border-radius: 5px;
   padding-bottom: 150px;
-  /* border: 1px solid red; */
 }
 .detail-header {
   font-size: 3rem;
@@ -467,7 +469,6 @@ input {
   align-items: center;
   justify-content: center;
   word-wrap: break-word;
-  /* border: 1px solid violet; */
   width: 640px;
 }
 .detail-item img {

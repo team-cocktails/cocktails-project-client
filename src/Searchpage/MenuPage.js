@@ -39,10 +39,12 @@ export default class MenuPage extends Component {
 
                                         </Link>
 
+
                                         <button className="remove-button" onClick={() => this.handleDelete(drink.id)}>Remove</button>
                                     </div>
                                 )
                             }
+
                         </div>
                     </div>
                 </div>

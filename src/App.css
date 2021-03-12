@@ -50,16 +50,16 @@ body, html {
 }
 
 
-.home-button {
+/* .home-button {
   width: 100px;
   cursor: pointer;
-}
+
 .home-button {
   width: 100px;
   cursor: pointer;
 	box-shadow:inset 0px 0px 14px -3px #f2fadc;
-	background:linear-gradient(to bottom, #ffe8cb 5%, #a9a9a9 100%);
-	background-color:#f0dbbc;
+	background:linear-gradient(to bottom, #fee9cf 5%, #9b826c 100%);
+	background-color:#faf3e7;
 	border-radius:6px;
 	border:1px solid rgb(165, 153, 181, 0.7);
 	display:inline-block;
@@ -70,12 +70,11 @@ body, html {
 	font-weight:bold;
 	padding:6px 24px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #ced9bf;
   margin: 10px;
 }
 
 .home-button:hover {
-	background:linear-gradient(to bottom, #f9f1e7 5%, #b6b6b6 100%);
+	background:linear-gradient(to bottom, #f9f1e7 25%, #A599B5 100%);
 	background-color:#e4c9b5;
 }
 
@@ -90,7 +89,7 @@ li {
   list-style: none;
 }
 a {
-  color: #A599B5;
+  color: #c3b5d7;
   text-decoration: none;
 }
 
@@ -159,9 +158,29 @@ input {
   width: 200px;
   border-radius: 2px;
 }
+
 .signup-button {
-  margin-top: 50px;
   width: 100px;
+  background-color: #A599B5;
+  cursor: pointer;
+	box-shadow:inset 0px 0px 14px -3px #f2fadc;
+	background:linear-gradient(to bottom, #f5ba77 5%, #9b826c 100%);
+	background-color:#faf3e7;
+	border-radius:6px;
+	border:1px solid rgb(165, 153, 181, 0.7);
+	cursor:pointer;
+	color:black;
+	font-family: 'Antic', sans-serif;
+	font-size:18px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+  margin: 50px;
+}
+
+.signup-button:hover {
+	background:linear-gradient(to bottom, #f9f1e7 25%, #50396c 100%);
+	background-color:#e4c9b5;
 }
 .signup-button:hover {
   background-color: #A599B5;
@@ -169,7 +188,7 @@ input {
 }
 
 
-/* Signin page */
+/* Login page */
 .signin-parent {
   display: flex;
   justify-content: center;
@@ -195,11 +214,30 @@ input {
   display: flex;
   flex-direction: column;
 }
+
+
 .signin-button {
+  width: 100px;
   background-color: #A599B5;
   cursor: pointer;
-  margin-top: 50px;
-  width: 100px;
+	box-shadow:inset 0px 0px 14px -3px #f2fadc;
+	background:linear-gradient(to bottom, #f5ba77 5%, #9b826c 100%);
+	background-color:#faf3e7;
+	border-radius:6px;
+	border:1px solid rgb(165, 153, 181, 0.7);
+	cursor:pointer;
+	color:black;
+	font-family: 'Antic', sans-serif;
+	font-size:18px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+  margin: 50px;
+}
+
+.signin-button:hover {
+	background:linear-gradient(to bottom, #f9f1e7 25%, #50396c 100%);
+	background-color:#e4c9b5;
 }
 .signin-button:hover {
   background-color: #A599B5;
@@ -229,27 +267,46 @@ input {
   margin-bottom: 50px;
   font-family: 'Aclonica', sans-serif;
 }
-.drink-button {
-  width: 100px;
-}
-.drink-button:hover {
+
+.search-button {
+  width: 120px;
+  height: 30px;
   background-color: #A599B5;
   cursor: pointer;
+	box-shadow:inset 0px 0px 14px -3px #f2fadc;
+	background:linear-gradient(to bottom, #f5ba77 5%, #9b826c 100%);
+	background-color:#faf3e7;
+	border-radius:6px;
+	border:1px solid rgb(165, 153, 181, 0.7);
+	cursor:pointer;
+	color:black;
+	font-family: 'Antic', sans-serif;
+	font-size:20px;
+	font-weight:bold;
+	text-decoration:none;
+  margin: 10px;
 }
-.ingredient-button {
-  width: 100px;
-}
-.ingredient-button:hover {
-  background-color: #A599B5;
-  cursor: pointer;
-}
+
 .random-button {
-  width: 100px;
-}
-.random-button:hover {
+  width: 120px;
+  height: 30px;
   background-color: #A599B5;
   cursor: pointer;
+	box-shadow:inset 0px 0px 14px -3px #f2fadc;
+	background:linear-gradient(to bottom, #f5ba77 5%, #9b826c 100%);
+	background-color:#faf3e7;
+	border-radius:6px;
+	border:1px solid rgb(165, 153, 181, 0.7);
+	cursor:pointer;
+	color:black;
+	font-family: 'Antic', sans-serif;
+	font-size:20px;
+	font-weight:bold;
+	text-decoration:none;
+  margin: 10px;
+  margin-left: 270px;
 }
+
 .search-items-container {
   display: flex;
   flex-wrap: wrap;
@@ -326,7 +383,7 @@ input {
   align-items: center;
   flex-direction: column;
   width: 175px;
-  height: auto;
+  height: 250px;
 }
 .menu-item img {
   width: 100px;
@@ -336,6 +393,53 @@ input {
   cursor: pointer;
 }
 
+.remove-button {
+  width: 100px;
+  height: 30px;
+  background-color: #A599B5;
+  cursor: pointer;
+	box-shadow:inset 0px 0px 14px -3px #f2fadc;
+	background:linear-gradient(to bottom, #f5ba77 5%, #9b826c 100%);
+	background-color:#faf3e7;
+	border-radius:6px;
+	border:1px solid rgb(165, 153, 181, 0.7);
+	cursor:pointer;
+	color:black;
+	font-family: 'Antic', sans-serif;
+	font-size:16px;
+	font-weight:bold;
+	text-decoration:none;
+  margin-bottom: 0px;
+}
+
+.remove-button:hover {
+	background:linear-gradient(to bottom, #f9f1e7 25%, #50396c 100%);
+	background-color:#e4c9b5;
+}
+
+.add-button {
+  width: 100px;
+  height: 30px;
+  background-color: #A599B5;
+  cursor: pointer;
+	box-shadow:inset 0px 0px 14px -3px #f2fadc;
+	background:linear-gradient(to bottom, #f5ba77 5%, #9b826c 100%);
+	background-color:#faf3e7;
+	border-radius:6px;
+	border:1px solid rgb(165, 153, 181, 0.7);
+	cursor:pointer;
+	color:black;
+	font-family: 'Antic', sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	text-decoration:none;
+  margin-bottom: 20px;
+}
+
+.add-button:hover {
+	background:linear-gradient(to bottom, #f9f1e7 25%, #50396c 100%);
+	background-color:#e4c9b5;
+}
 
 /* detail page */
 .detail-parent {
@@ -362,24 +466,24 @@ input {
 .detail-item {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   word-wrap: break-word;
   width: 640px;
 }
 .detail-item img {
   width: 300px;
+  
 }
 .detail-detail {
   border: 5px solid #ACBDBA;
   border-radius: 5px;
   word-wrap: break-word;
   margin: 5px;
-  display: flex;
-  justify-content:;
-  align-items:;
-  flex-direction: column;
   line-height: 1;
   padding: 20px;
   width: 600px;
+  font-size: 1.1em;
 }
 .detail-times-drank {
   display: flex;
@@ -393,4 +497,28 @@ input {
 .times-drank-button:hover {
   background-color: #A599B5;
   cursor: pointer;
+}
+
+.times-drank-button {
+  width: 150px;
+  height: 30px;
+  background-color: #A599B5;
+  cursor: pointer;
+	box-shadow:inset 0px 0px 14px -3px #f2fadc;
+	background:linear-gradient(to bottom, #f5ba77 5%, #9b826c 100%);
+	background-color:#faf3e7;
+	border-radius:6px;
+	border:1px solid rgb(165, 153, 181, 0.7);
+	cursor:pointer;
+	color:black;
+	font-family: 'Antic', sans-serif;
+	font-size:16px;
+	font-weight:bold;
+	text-decoration:none;
+  margin: 10px;
+}
+
+.times-drank-button:hover {
+	background:linear-gradient(to bottom, #f9f1e7 25%, #50396c 100%);
+	background-color:#e4c9b5;
 }

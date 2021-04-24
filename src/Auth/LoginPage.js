@@ -23,6 +23,7 @@ export default class LoginPage extends Component {
             this.props.history.push('/menu');
 
         } catch(e) {
+            // nice work with this error handling! though it would be nice to see you use this state somewhere
             this.setState({ error: e.response.body.error })
         }
     }

@@ -55,6 +55,7 @@ export default class SearchPage extends Component {
         }, this.props.user.token)
         await this.fetchMenu();
     }
+    // nice util!
     ifMenu = (drink) => {
 
         const menu = this.state.menu.find(item =>
@@ -97,6 +98,7 @@ export default class SearchPage extends Component {
                                         <p>{drink.strDrink}</p>
                                         <p>{drink.id}</p>
                                         <div className='search-favorite'>{
+                                            // very cool ternery!
                                             this.ifMenu(drink)
                                                 ? <p><img alt='menu marker' src={favoriteMarker} />On Your Menu</p>
                                                 : <button className="add-button" onClick={() => this.handleMenuClick(drink)}>Add to Menu</button>}

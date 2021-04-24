@@ -1,3 +1,5 @@
+// this probably shouldn't be in the components directory, since it doesn't contain any react code
+
 import request from "superagent";
 
 
@@ -25,22 +27,25 @@ export async function getSearchDrinks(query, token) {
 }
 
 export async function getIngredientDrinks(query, token) {
+    return await makeRequest(url, query, token);
+}
+
+// a lot of these functions could be made leaner by calling this function, which would reduce duplication
+async function makeRequest(url, param, token) {
     const response = await request
-        .get(`${URL}/api/ingredients?filter=${query}`)
-        .set('Authorization', token)
+        .get(`${URL}${url}${param}`)
+        .set('Authorization', token);
     return response.body;
+}
+
+
+export async function deleteDrink(drinkId, token) {
+    return await makeRequest('/api/menu/', drinkId, token);
 }
 
 export async function getRandomDrinks(token) {
     const response = await request
         .get(`${URL}/api/random`)
-        .set('Authorization', token)
-    return response.body;
-}
-
-export async function deleteDrink(drinkId, token) {
-    const response = await request
-        .delete(`${URL}/api/menu/${drinkId}`)
         .set('Authorization', token)
     return response.body;
 }
@@ -68,14 +73,13 @@ export async function addToMenu(drink, token) {
 }
 
 export async function addTimesDrank(drinkId, times_drank, owner_id, token) {
-    const newDrink = {
-        "times_drank": times_drank,
-        "owner_id": owner_id,
-    }
     const response = await request
         .put(`${URL}/api/menu/${drinkId}`)
         .set('Authorization', token)
-        .send(newDrink)
+        .send({
+            times_drank,
+            owner_id,
+        })
     return response.body;
 }
 
@@ -87,6 +91,7 @@ export async function getSQLId(drinkId, token) {
 }
 
 export function getDetailId(detail) {
+    // seems like this returns an array rather than an id? might be nice to change the name to convey that
     const SQLId = detail.map((drink) => drink.idDrink)
     return SQLId
 }

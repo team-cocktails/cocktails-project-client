@@ -12,6 +12,7 @@ export default class AboutPage extends Component {
             
                 <h1 className='members-header'>Meet the team at What'll ya have? </h1>
                 <div className='members'>
+                    {/* might have been nice to have a MembersItem component for reusability, then hold onto this datai n an array to map over */}
                     <div className='members-item'>
                         <img alt='Vance drinking' src={vance} />
                         <div>Software Engineer</div>

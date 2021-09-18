@@ -2,7 +2,7 @@
 
 ## Group members- Josie Cantu, Taylor Reichner, Vance Mills, Stephen Tamiesie.
 
-- Our project is designed to help people make cocktails! Users will be able to search cocktails by name or ingredient and see a list of the ingredients, measurements, and a description of how to make them. As an added bonus they will be able to get a random cocktail!
+- This project is designed to help people make cocktails! Users will be able to search cocktails by name or ingredient and see a list of the ingredients, measurements, and a description of how to make them. As an added bonus they will be able to get a random cocktail!
 
 - Our project is designed to help none bartenders make drinks correctly and find out what drinks they are able to make with the type of alcohal in their home.
 

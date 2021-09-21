@@ -19,7 +19,8 @@ export default class DetailPage extends Component {
     }
 
     handleTimesDrank = async (times_drank, owner_id, drinkId) => {
-        const incrementedTimes_Drank = times_drank++
+        // would like to avoid mutation here, even though it's a small thing
+        const incrementedTimes_Drank = times_drank + 1
         addTimesDrank(drinkId, incrementedTimes_Drank, owner_id, this.props.user.token)
         const detail = this.state.drink;
         const APIDrinkId = getDetailId(detail);
@@ -69,6 +70,7 @@ export default class DetailPage extends Component {
                                 <button className='times-drank-button' onClick={() => this.handleTimesDrank(drink.times_drank, drink.owner_id, drink.id)}>I drank this!</button>
                             </div>)}
                         <div className='detail-times-drank'>
+                            {/* this works with the relative path? interesting! */}
                             <Link to={`../menu`}><button className='times-drank-button'>Back to Your Menu</button></Link>
                         </div>
                     </div>
